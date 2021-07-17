@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "ゆったり座れるイス",
+    "description": "くつろいで座れる優れ物。足置きがセットでついてきます。",
+    "price": 3000,
+    "image_path": "product_data/images/chair1.jpg",
+    "stock": 20,
+    "star": 4.2,
+    "review_count": 3
+  },
+  {
+    "id": 2,
+    "name": "ふかふかの座り心地のイス",
+    "description": "くつろいで読書をしたい人などにおすすめ。",
+    "price": 2000,
+    "image_path": "product_data/images/chair2.jpg",
+    "stock": 1,
+    "star": 3.5,
+    "review_count": 8
+  },
+  {
+    "id": 3,
+    "name": "折り畳み式のシンプルな机",
+    "description": "折り畳み式のため、必要ないときは折り畳んで収納できます。",
+    "price": 3500,
+    "image_path": "product_data/images/desk1.jpg",
+    "stock": 31,
+    "star": 4.8,
+    "review_count": 23
+  },
+  {
+    "id": 4,
+    "name": "ちょっとリッチな机",
+    "description": "木材を使用しているちょっと高級な机です。",
+    "price": 5000,
+    "image_path": "product_data/images/desk2.jpg",
+    "stock": 12,
+    "star": 4,
+    "review_count": 26
+  },
+  {
+    "id": 5,
+    "name": "白い机",
+    "description": "リモートワークに最適。全面白色のおしゃれな机。",
+    "price": 3000,
+    "image_path": "product_data/images/desk3.jpg",
+    "stock": 2,
+    "star": 5,
+    "review_count": 73
+  },
+  {
+    "id": 6,
+    "name": "高級感あふれる棚",
+    "description": "高さがあるため大きなものをおくことも可能です。",
+    "price": 4000,
+    "image_path": "product_data/images/shelf1.jpg",
+    "stock": 6,
+    "star": 4.2,
+    "review_count": 33
+  },
+  {
+    "id": 7,
+    "name": "リビングによく合うおしゃれな棚",
+    "description": "家族団欒のリビングをおしゃれに。収納スペースもたくさんあります。",
+    "price": 7000,
+    "image_path": "product_data/images/shelf2.jpg",
+    "stock": 12,
+    "star": 4.2,
+    "review_count": 83
+  },
+  {
+    "id": 8,
+    "name": "折り畳みしきのソファ",
+    "description": "クッション付き。広げれば簡易的なベッドとして寝ることも可能です。",
+    "price": 10000,
+    "image_path": "product_data/images/sofa1.jpg",
+    "stock": 17,
+    "star": 4.5,
+    "review_count": 38
+  },
+  {
+    "id": 9,
+    "name": "木材を使用したソファ",
+    "description": "土台が木材でできているのでインテリアとして最適です。座り心地も最高です。",
+    "price": 8000,
+    "image_path": "product_data/images/sofa2.jpg",
+    "stock": 1,
+    "star": 4,
+    "review_count": 53
+  },
+  {
+    "id": 10,
+    "name": "シンプルなソファ",
+    "description": "１人暮らしの方に大人気。白の落ち着いたソファです。",
+    "price": 7000,
+    "image_path": "product_data/images/sofa1.jpg",
+    "stock": 26,
+    "star": 5,
+    "review_count": 93
+  }
+]
