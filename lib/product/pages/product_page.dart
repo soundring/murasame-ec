@@ -1,30 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:murasame_ec/product/widgets/widget.dart';
 
-class ProductPage extends StatelessWidget {
+class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
 
   @override
+  _ProductPageState createState() => _ProductPageState();
+}
+
+class _ProductPageState extends State<ProductPage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 4, vsync: this);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('ムラサメ家具'),
-          backgroundColor: const Color(0xffdeddd3),
-          bottom: const TabBar(
-            indicatorColor: Colors.brown,
-            tabs: <Tab>[
-              Tab(text: '全商品'),
-              Tab(text: '新商品'),
-              Tab(text: 'ランキング'),
-              Tab(text: 'おすすめ'),
-            ],
-          ),
+    return Column(
+      children: <Widget>[
+        TabBar(
+          controller: _tabController,
+          indicatorColor: Colors.brown,
+          tabs: const <Tab>[
+            Tab(text: '全商品'),
+            Tab(text: '新商品'),
+            Tab(text: 'ランキング'),
+            Tab(text: 'おすすめ'),
+          ],
         ),
-        backgroundColor: const Color(0xffdeddd3),
-        body: const ProductListWidget(),
-      ),
+        const ProductListWidget(),
+      ],
     );
   }
 }
