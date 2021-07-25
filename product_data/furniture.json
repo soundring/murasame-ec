@@ -56,7 +56,7 @@
     "price": 4000,
     "image_path": "product_data/images/shelf1.jpg",
     "stock": 6,
-    "star": 4.2,
+    "star": 4.8,
     "review_count": 33
   },
   {
@@ -94,7 +94,7 @@
     "name": "シンプルなソファ",
     "description": "１人暮らしの方に大人気。白の落ち着いたソファです。",
     "price": 7000,
-    "image_path": "product_data/images/sofa1.jpg",
+    "image_path": "product_data/images/sofa3.jpg",
     "stock": 26,
     "star": 5,
     "review_count": 93
