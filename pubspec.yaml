@@ -35,3 +35,4 @@ flutter:
 
   assets:
     - product_data/images/
+    - product_data/furniture.json
