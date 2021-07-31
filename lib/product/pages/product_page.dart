@@ -27,7 +27,6 @@ class _ProductPageState extends State<ProductPage>
       children: <Widget>[
         TabBar(
           controller: _tabController,
-          indicatorColor: Colors.brown,
           tabs: const <Tab>[
             Tab(text: '全商品'),
             Tab(text: '人気商品'),
