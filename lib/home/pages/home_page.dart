@@ -47,13 +47,9 @@ class HomePage extends HookWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ムラサメ家具'),
-        backgroundColor: const Color(0xffdeddd3),
       ),
-      backgroundColor: const Color(0xffdeddd3),
       body: _pageList[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color(0xffAEAB92),
-          selectedItemColor: Colors.white,
           items: _bottomNavigationBarItem,
           currentIndex: _selectedIndex,
           type: BottomNavigationBarType.fixed,

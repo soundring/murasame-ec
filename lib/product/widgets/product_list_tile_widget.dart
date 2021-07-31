@@ -27,7 +27,6 @@ class ProductListTileWidget extends StatelessWidget {
               child: Text(
                 product.name,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.black.withOpacity(0.8)),
               ),
             ),
             Row(
@@ -54,9 +53,6 @@ class ProductListTileWidget extends StatelessWidget {
                 const SizedBox(width: 3),
                 Text(
                   '${product.review_count}件',
-                  style: const TextStyle(
-                    color: Colors.grey,
-                  ),
                 )
               ],
             ),
@@ -64,10 +60,7 @@ class ProductListTileWidget extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: Text(
                 '${product.price}円（税込）',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.caption,
               ),
             ),
           ],
