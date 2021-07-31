@@ -34,6 +34,10 @@ class CustomThemeData {
         ),
       ),
       textTheme: const TextTheme(
+          subtitle1: TextStyle(
+            color: mainColor,
+            fontSize: 16,
+          ),
           subtitle2: TextStyle(
             color: mainColor,
             fontSize: 20,
@@ -41,7 +45,7 @@ class CustomThemeData {
           ),
           bodyText1: TextStyle(
             color: mainColor,
-            fontSize: 28,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
           bodyText2: TextStyle(
