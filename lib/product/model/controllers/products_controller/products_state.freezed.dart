@@ -16,12 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProductsStateTearOff {
   const _$ProductsStateTearOff();
 
-  _ProductsState call(
-      {List<Product> productStocks = const <Product>[],
-      bool isLoading = true}) {
+  _ProductsState call({List<Product> productStocks = const <Product>[]}) {
     return _ProductsState(
       productStocks: productStocks,
-      isLoading: isLoading,
     );
   }
 }
@@ -32,7 +29,6 @@ const $ProductsState = _$ProductsStateTearOff();
 /// @nodoc
 mixin _$ProductsState {
   List<Product> get productStocks => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductsStateCopyWith<ProductsState> get copyWith =>
@@ -44,7 +40,7 @@ abstract class $ProductsStateCopyWith<$Res> {
   factory $ProductsStateCopyWith(
           ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res>;
-  $Res call({List<Product> productStocks, bool isLoading});
+  $Res call({List<Product> productStocks});
 }
 
 /// @nodoc
@@ -59,17 +55,12 @@ class _$ProductsStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? productStocks = freezed,
-    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
       productStocks: productStocks == freezed
           ? _value.productStocks
           : productStocks // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -81,7 +72,7 @@ abstract class _$ProductsStateCopyWith<$Res>
           _ProductsState value, $Res Function(_ProductsState) then) =
       __$ProductsStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Product> productStocks, bool isLoading});
+  $Res call({List<Product> productStocks});
 }
 
 /// @nodoc
@@ -98,17 +89,12 @@ class __$ProductsStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? productStocks = freezed,
-    Object? isLoading = freezed,
   }) {
     return _then(_ProductsState(
       productStocks: productStocks == freezed
           ? _value.productStocks
           : productStocks // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -116,19 +102,15 @@ class __$ProductsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ProductsState implements _ProductsState {
-  _$_ProductsState(
-      {this.productStocks = const <Product>[], this.isLoading = true});
+  _$_ProductsState({this.productStocks = const <Product>[]});
 
   @JsonKey(defaultValue: const <Product>[])
   @override
   final List<Product> productStocks;
-  @JsonKey(defaultValue: true)
-  @override
-  final bool isLoading;
 
   @override
   String toString() {
-    return 'ProductsState(productStocks: $productStocks, isLoading: $isLoading)';
+    return 'ProductsState(productStocks: $productStocks)';
   }
 
   @override
@@ -137,17 +119,12 @@ class _$_ProductsState implements _ProductsState {
         (other is _ProductsState &&
             (identical(other.productStocks, productStocks) ||
                 const DeepCollectionEquality()
-                    .equals(other.productStocks, productStocks)) &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+                    .equals(other.productStocks, productStocks)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(productStocks) ^
-      const DeepCollectionEquality().hash(isLoading);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(productStocks);
 
   @JsonKey(ignore: true)
   @override
@@ -156,13 +133,10 @@ class _$_ProductsState implements _ProductsState {
 }
 
 abstract class _ProductsState implements ProductsState {
-  factory _ProductsState({List<Product> productStocks, bool isLoading}) =
-      _$_ProductsState;
+  factory _ProductsState({List<Product> productStocks}) = _$_ProductsState;
 
   @override
   List<Product> get productStocks => throw _privateConstructorUsedError;
-  @override
-  bool get isLoading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProductsStateCopyWith<_ProductsState> get copyWith =>

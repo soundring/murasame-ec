@@ -14,7 +14,6 @@ class ProductsController extends StateNotifier<ProductsState> {
     () async {
       state = state.copyWith(
         productStocks: await _read(productsFetcher.future),
-        isLoading: false,
       );
     }();
   }
