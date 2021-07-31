@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
 
 class ProductListTileWidget extends StatelessWidget {
@@ -31,35 +32,29 @@ class ProductListTileWidget extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Icon(
-                  Icons.star,
-                  color: Colors.yellow,
+                RatingBar.builder(
+                  initialRating: product.star,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemSize: 20,
+                  ignoreGestures: true,
+                  itemBuilder: (context, _) => const Icon(
+                    Icons.star,
+                    color: Color(0xffd3c112),
+                  ),
+                  onRatingUpdate: (rating) {},
                 ),
-                Icon(
-                  Icons.star,
-                  color: Colors.yellow,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.yellow,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.yellow,
-                ),
-                Icon(
-                  Icons.star_border,
-                  color: Colors.grey,
-                ),
-                SizedBox(width: 10),
-                Icon(
+                const SizedBox(width: 10),
+                const Icon(
                   Icons.messenger,
                   color: Color(0xffAEAB92),
                 ),
-                SizedBox(width: 3),
+                const SizedBox(width: 3),
                 Text(
                   '${product.review_count}件',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                   ),
                 )
