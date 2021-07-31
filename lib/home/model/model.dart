@@ -1,1 +1,1 @@
-export 'controllers/controller.dart';
+export 'controllers/controllers.dart';
