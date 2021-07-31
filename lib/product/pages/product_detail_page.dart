@@ -26,15 +26,18 @@ class ProductDetailPage extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
               children: [
-                Column(
+                Align(
+                  child: Text(
+                    product.name,
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                  alignment: Alignment.centerLeft,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      product.name,
-                      style: Theme.of(context).textTheme.subtitle2,
-                    ),
                     Row(
                       children: <Widget>[
                         _ratingBar(),
@@ -42,9 +45,9 @@ class ProductDetailPage extends StatelessWidget {
                         _review(),
                       ],
                     ),
+                    _favoriteButton(),
                   ],
                 ),
-                _favoriteButton(),
               ],
             ),
           ),
