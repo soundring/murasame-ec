@@ -16,7 +16,7 @@ class ProductListWidget extends HookWidget {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 6,
+          mainAxisSpacing: 10,
         ),
         itemCount: products.length,
         itemBuilder: (BuildContext context, int index) {

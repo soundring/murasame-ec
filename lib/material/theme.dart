@@ -1,31 +1,65 @@
 import 'package:flutter/material.dart';
 
 class CustomThemeData {
+  static const baseColor = Color(0xffdeddd3);
+  static const mainColor = Color(0xff532305);
+
   static ThemeData lightThemeData() {
     final theme = ThemeData.light().copyWith(
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(0xffdeddd3),
+        iconTheme: IconThemeData(color: mainColor),
+        backgroundColor: baseColor,
       ),
-      scaffoldBackgroundColor: const Color(0xffdeddd3),
+      scaffoldBackgroundColor: baseColor,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color(0xffAEAB92),
         selectedItemColor: Colors.white,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: mainColor,
+          textStyle: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          side: const BorderSide(color: mainColor),
+          backgroundColor: const Color(0xffe9e8e2),
+        ),
+      ),
       textTheme: const TextTheme(
+          subtitle2: TextStyle(
+            color: mainColor,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyText1: TextStyle(
+            color: mainColor,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
           bodyText2: TextStyle(
-            color: Color(0xff532305),
+            color: mainColor,
+            fontSize: 14,
           ),
           caption: TextStyle(
-            color: Color(0xff6a3719),
+            color: mainColor,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
           )),
       primaryTextTheme: const TextTheme(
         headline6: TextStyle(
-          color: Color(0xff3E1900),
+          color: mainColor,
         ),
       ),
       tabBarTheme: const TabBarTheme(
-        labelColor: Color(0xff3E1900),
+        labelColor: mainColor,
       ),
       indicatorColor: Colors.brown,
     );
