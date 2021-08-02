@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:murasame_ec/favorite/widgets/widgets.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class ProductDetailPage extends HookWidget {
   const ProductDetailPage({required this.product, Key? key}) : super(key: key);
 
   final Product product;
@@ -45,7 +47,7 @@ class ProductDetailPage extends StatelessWidget {
                         _review(),
                       ],
                     ),
-                    _favoriteButton(),
+                    FavoriteButtonWidget(productId: product.id),
                   ],
                 ),
               ],
@@ -115,17 +117,6 @@ class ProductDetailPage extends StatelessWidget {
           '${product.review_count}件',
         )
       ],
-    );
-  }
-
-  Widget _favoriteButton() {
-    return OutlinedButton(
-      onPressed: () {},
-      child: const Icon(
-        Icons.favorite_border,
-        size: 30,
-        color: Color(0xffea553a),
-      ),
     );
   }
 }
