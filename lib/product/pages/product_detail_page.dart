@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:murasame_ec/favorite/widgets/widgets.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
+import 'package:murasame_ec/product/widgets/widget.dart';
 
 class ProductDetailPage extends HookWidget {
   const ProductDetailPage({required this.product, Key? key}) : super(key: key);
@@ -33,6 +33,7 @@ class ProductDetailPage extends HookWidget {
                 Align(
                   child: Text(
                     product.name,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
                   alignment: Alignment.centerLeft,
@@ -42,7 +43,10 @@ class ProductDetailPage extends HookWidget {
                   children: [
                     Row(
                       children: <Widget>[
-                        _ratingBar(),
+                        RatingBarWidget(
+                          product: product,
+                          itemSize: 26,
+                        ),
                         const SizedBox(width: 10),
                         _review(),
                       ],
@@ -86,23 +90,6 @@ class ProductDetailPage extends HookWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _ratingBar() {
-    return RatingBar.builder(
-      initialRating: product.star,
-      minRating: 1,
-      direction: Axis.horizontal,
-      allowHalfRating: true,
-      itemCount: 5,
-      itemSize: 26,
-      ignoreGestures: true,
-      itemBuilder: (context, _) => const Icon(
-        Icons.star,
-        color: Color(0xffd3c112),
-      ),
-      onRatingUpdate: (rating) {},
     );
   }
 
