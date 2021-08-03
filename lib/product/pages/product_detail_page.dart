@@ -27,7 +27,7 @@ class ProductDetailPage extends HookWidget {
                 child: Image.asset(product.image_path)),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(12),
             child: Column(
               children: [
                 Align(
@@ -54,7 +54,7 @@ class ProductDetailPage extends HookWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 12),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -67,13 +67,13 @@ class ProductDetailPage extends HookWidget {
             height: height * 0.05,
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(vertical: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [

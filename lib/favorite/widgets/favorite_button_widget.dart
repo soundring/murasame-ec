@@ -19,23 +19,26 @@ class FavoriteButtonWidget extends HookWidget {
     if (favoriteProductIds.contains(productId)) {
       iconWidget = const Icon(
         Icons.favorite,
-        size: 30,
+        size: 32,
         color: Color(0xffea553a),
       );
     } else {
       iconWidget = const Icon(
         Icons.favorite_border,
-        size: 30,
+        size: 32,
         color: Color(0xffea553a),
       );
     }
-    return OutlinedButton(
-      onPressed: () {
-        context
-            .read<FavoritesController>(favoritesProvider.notifier)
-            .addFavoriteProduct(productId: productId);
-      },
-      child: iconWidget,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      child: OutlinedButton(
+        onPressed: () {
+          context
+              .read<FavoritesController>(favoritesProvider.notifier)
+              .addFavoriteProduct(productId: productId);
+        },
+        child: iconWidget,
+      ),
     );
   }
 }
