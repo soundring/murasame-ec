@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:murasame_ec/favorite/model/controllers/controllers.dart';
 import 'package:murasame_ec/product/model/controllers/controllers.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
+import 'package:murasame_ec/product/widgets/rating_bar_widget.dart';
 
 class FavoriteListWidget extends HookWidget {
   const FavoriteListWidget({Key? key}) : super(key: key);
@@ -38,7 +39,50 @@ class FavoriteListWidget extends HookWidget {
                     width: 150,
                     child: Image.asset(favoriteProduct.image_path),
                   ),
-                  Text(favoriteProduct.name),
+                  Expanded(
+                    child: Container(
+                      height: 150,
+                      padding: const EdgeInsets.only(top: 5, left: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            favoriteProduct.name,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.subtitle1,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          RatingBarWidget(
+                              product: favoriteProduct, itemSize: 24),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.messenger,
+                                color: Color(0xffAEAB92),
+                                size: 26,
+                              ),
+                              Text(
+                                '${favoriteProduct.review_count}件',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            '${favoriteProduct.price}円(税込)',
+                            style: Theme.of(context).textTheme.subtitle2,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
               const Divider(),
