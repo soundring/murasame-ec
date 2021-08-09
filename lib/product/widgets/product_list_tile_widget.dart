@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
 import 'package:murasame_ec/product/pages/product_detail_page.dart';
@@ -33,7 +32,6 @@ class ProductListTileWidget extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 0,
           child: Align(
             alignment: Alignment.topLeft,
             child: Text(
@@ -43,7 +41,6 @@ class ProductListTileWidget extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 0,
           child: Row(
             children: <Widget>[
               RatingBarWidget(
@@ -51,19 +48,11 @@ class ProductListTileWidget extends StatelessWidget {
                 itemSize: 20,
               ),
               const SizedBox(width: 10),
-              const Icon(
-                Icons.messenger,
-                color: Color(0xffAEAB92),
-              ),
-              const SizedBox(width: 3),
-              Text(
-                '${product.review_count}件',
-              )
+              ReviewCountWidget(reviewCount: product.review_count),
             ],
           ),
         ),
         Expanded(
-          flex: 0,
           child: Align(
             alignment: Alignment.topLeft,
             child: Text(
