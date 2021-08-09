@@ -7,6 +7,5 @@ part 'products_state.freezed.dart';
 class ProductsState with _$ProductsState {
   factory ProductsState({
     @Default(<Product>[]) List<Product> productStocks,
-    @Default(true) bool isLoading,
   }) = _ProductsState;
 }

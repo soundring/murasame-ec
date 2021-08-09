@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:murasame_ec/favorite/widgets/widgets.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
+import 'package:murasame_ec/product/widgets/widget.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class ProductDetailPage extends HookWidget {
   const ProductDetailPage({required this.product, Key? key}) : super(key: key);
 
   final Product product;
@@ -25,31 +27,38 @@ class ProductDetailPage extends StatelessWidget {
                 child: Image.asset(product.image_path)),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.all(12),
+            child: Column(
               children: [
-                Column(
+                Align(
+                  child: Text(
+                    product.name,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                  alignment: Alignment.centerLeft,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      product.name,
-                      style: Theme.of(context).textTheme.subtitle2,
-                    ),
                     Row(
                       children: <Widget>[
-                        _ratingBar(),
+                        RatingBarWidget(
+                          product: product,
+                          itemSize: 26,
+                        ),
                         const SizedBox(width: 10),
                         _review(),
                       ],
                     ),
+                    FavoriteButtonWidget(productId: product.id),
                   ],
                 ),
-                _favoriteButton(),
               ],
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 12),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -62,13 +71,13 @@ class ProductDetailPage extends StatelessWidget {
             height: height * 0.05,
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(vertical: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -84,23 +93,6 @@ class ProductDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _ratingBar() {
-    return RatingBar.builder(
-      initialRating: product.star,
-      minRating: 1,
-      direction: Axis.horizontal,
-      allowHalfRating: true,
-      itemCount: 5,
-      itemSize: 26,
-      ignoreGestures: true,
-      itemBuilder: (context, _) => const Icon(
-        Icons.star,
-        color: Color(0xffd3c112),
-      ),
-      onRatingUpdate: (rating) {},
-    );
-  }
-
   Widget _review() {
     return Row(
       children: [
@@ -112,17 +104,6 @@ class ProductDetailPage extends StatelessWidget {
           '${product.review_count}件',
         )
       ],
-    );
-  }
-
-  Widget _favoriteButton() {
-    return OutlinedButton(
-      onPressed: () {},
-      child: const Icon(
-        Icons.favorite_border,
-        size: 30,
-        color: Color(0xffea553a),
-      ),
     );
   }
 }
