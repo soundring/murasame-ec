@@ -29,17 +29,14 @@ class MyPage extends StatelessWidget {
                       bottom: BorderSide(width: 1.0, color: Colors.grey),
                     ),
                   ),
-                  child: Ink(
-                    color: const Color(0xffe9e8e2),
-                    child: ListTile(
-                      title: const Text('ライセンス'),
-                      onTap: () {
-                        showLicensePage(
-                          context: context,
-                          applicationVersion: '1.0.0',
-                        );
-                      },
-                    ),
+                  child: ListTile(
+                    title: const Text('ライセンス'),
+                    onTap: () {
+                      showLicensePage(
+                        context: context,
+                        applicationVersion: '1.0.0',
+                      );
+                    },
                   ),
                 );
               }),
