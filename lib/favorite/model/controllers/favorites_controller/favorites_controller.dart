@@ -11,16 +11,13 @@ final favoritesProvider =
 class FavoritesController extends StateNotifier<FavoritesState> {
   FavoritesController() : super(FavoritesState());
 
-  void addFavoriteProduct({int productId = 0}) {
+  void toggleFavoriteProduct({int productId = 0}) {
     final favoriteProductIds = [...state.favoriteProductIds];
-    favoriteProductIds.add(productId);
-
-    state = state.copyWith(favoriteProductIds: favoriteProductIds);
-  }
-
-  void deleteFavoriteProduct({int productId = 0}) {
-    final favoriteProductIds = [...state.favoriteProductIds];
-    favoriteProductIds.removeAt(productId);
+    if (favoriteProductIds.contains(productId)) {
+      favoriteProductIds.remove(productId);
+    } else {
+      favoriteProductIds.add(productId);
+    }
 
     state = state.copyWith(favoriteProductIds: favoriteProductIds);
   }

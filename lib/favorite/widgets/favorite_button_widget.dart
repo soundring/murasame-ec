@@ -29,13 +29,14 @@ class FavoriteButtonWidget extends HookWidget {
         color: Color(0xffea553a),
       );
     }
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6),
       child: OutlinedButton(
         onPressed: () {
           context
               .read<FavoritesController>(favoritesProvider.notifier)
-              .addFavoriteProduct(productId: productId);
+              .toggleFavoriteProduct(productId: productId);
         },
         child: iconWidget,
       ),
