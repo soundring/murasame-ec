@@ -15,6 +15,7 @@ class CustomThemeData {
         backgroundColor: Color(0xffAEAB92),
         selectedItemColor: Colors.white,
       ),
+      indicatorColor: Colors.brown,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           primary: mainColor,
@@ -31,7 +32,6 @@ class CustomThemeData {
             borderRadius: BorderRadius.circular(10),
           ),
           side: const BorderSide(color: mainColor),
-          backgroundColor: const Color(0xffe9e8e2),
         ),
       ),
       textTheme: const TextTheme(
@@ -66,14 +66,56 @@ class CustomThemeData {
       tabBarTheme: const TabBarTheme(
         labelColor: mainColor,
       ),
-      indicatorColor: Colors.brown,
     );
 
     return theme;
   }
 
   static ThemeData darkThemeData() {
-    final theme = ThemeData.dark().copyWith();
+    final theme = ThemeData.dark().copyWith(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey.withOpacity(0.8),
+      ),
+      indicatorColor: Colors.white,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.brown.withOpacity(0.8),
+          textStyle: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+      textTheme: const TextTheme(
+        subtitle1: TextStyle(
+          fontSize: 16,
+        ),
+        subtitle2: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyText1: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyText2: TextStyle(
+          fontSize: 14,
+        ),
+        caption: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
 
     return theme;
   }
