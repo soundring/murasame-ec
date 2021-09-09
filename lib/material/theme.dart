@@ -6,6 +6,7 @@ class CustomThemeData {
 
   static ThemeData lightThemeData() {
     final theme = ThemeData.light().copyWith(
+      primaryColorLight: mainColor,
       appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(color: mainColor),
         backgroundColor: baseColor,
@@ -32,6 +33,12 @@ class CustomThemeData {
             borderRadius: BorderRadius.circular(10),
           ),
           side: const BorderSide(color: mainColor),
+        ),
+      ),
+      inputDecorationTheme: const InputDecorationTheme(
+        focusColor: Color(0xffAEAB92),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: mainColor),
         ),
       ),
       textTheme: const TextTheme(
@@ -93,6 +100,11 @@ class CustomThemeData {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
+        ),
+      ),
+      inputDecorationTheme: const InputDecorationTheme(
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
       textTheme: const TextTheme(
