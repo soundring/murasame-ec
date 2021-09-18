@@ -46,4 +46,8 @@ class CartController extends StateNotifier<CartState> {
     cartItems.remove(cartItem);
     state = state.copyWith(cartItems: [...cartItems]);
   }
+
+  void clear() {
+    state = state.copyWith(cartItems: []);
+  }
 }
