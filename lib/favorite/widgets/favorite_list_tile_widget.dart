@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
-import 'package:murasame_ec/product/pages/pages.dart';
+import 'package:murasame_ec/product/pages/product_detail_page.dart';
 import 'package:murasame_ec/product/widgets/widget.dart';
 
 class FavoriteListTileWidget extends StatelessWidget {

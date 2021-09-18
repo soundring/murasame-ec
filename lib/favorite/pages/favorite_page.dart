@@ -6,20 +6,6 @@ class FavoritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'お気に入り',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-          ),
-        ),
-        const FavoriteListWidget(),
-      ],
-    );
+    return const FavoriteListWidget();
   }
 }

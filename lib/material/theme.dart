@@ -19,7 +19,6 @@ class CustomThemeData {
       indicatorColor: Colors.brown,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          primary: mainColor,
           textStyle: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -80,6 +79,7 @@ class CustomThemeData {
 
   static ThemeData darkThemeData() {
     final theme = ThemeData.dark().copyWith(
+      primaryColorLight: mainColor,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey.withOpacity(0.8),

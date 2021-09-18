@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:murasame_ec/cart/model/controllers/cart_controller.dart';
 import 'package:murasame_ec/favorite/widgets/widgets.dart';
 import 'package:murasame_ec/product/model/entities/entities.dart';
 import 'package:murasame_ec/product/widgets/widget.dart';
@@ -12,6 +14,8 @@ class ProductDetailPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final cartItems = useProvider(cartProvider.select((s) => s.cartItems));
+    final isCartItem = cartItems.any((cartItem) => cartItem.product == product);
 
     return Scaffold(
       appBar: AppBar(
@@ -73,16 +77,25 @@ class ProductDetailPage extends HookWidget {
           Container(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              style: ElevatedButton.styleFrom(
+                  primary: Theme.of(context).primaryColorLight),
+              onPressed: isCartItem
+                  ? null
+                  : () {
+                      context
+                          .read<CartController>(cartProvider.notifier)
+                          .add(productId: product.id);
+                    },
               child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.shopping_cart),
-                    Text('カートに入れる'),
+                  children: [
+                    const Icon(Icons.shopping_cart),
+                    if (isCartItem)
+                      const Text('カートに追加済みです')
+                    else
+                      const Text('カートに入れる'),
                   ],
                 ),
               ),
