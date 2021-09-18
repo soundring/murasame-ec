@@ -19,6 +19,8 @@ class HomePage extends HookWidget {
     const MyPage()
   ];
 
+  final List<String> _appBarTitle = ['ムラサメ家具', '検索', 'お気に入り', 'カート', 'マイページ'];
+
   final _bottomNavigationBarItem = const <BottomNavigationBarItem>[
     BottomNavigationBarItem(
       icon: Icon(Icons.home),
@@ -49,7 +51,7 @@ class HomePage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ムラサメ家具'),
+        title: Text(_appBarTitle[_selectedIndex]),
       ),
       body: _pageList[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
