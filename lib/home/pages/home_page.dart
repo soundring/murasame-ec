@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:murasame_ec/favorite/pages/pages.dart';
+import 'package:murasame_ec/cart/pages/cart_page.dart';
+import 'package:murasame_ec/favorite/pages/favorite_page.dart';
 import 'package:murasame_ec/home/model/model.dart';
-import 'package:murasame_ec/product/pages/pages.dart';
+import 'package:murasame_ec/product/pages/product_page.dart';
+import 'package:murasame_ec/search/pages/search_page.dart';
 import 'package:murasame_ec/user/pages/pages.dart';
 
 class HomePage extends HookWidget {
