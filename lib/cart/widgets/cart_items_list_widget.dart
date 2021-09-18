@@ -13,10 +13,14 @@ class CartItemsListWidget extends HookWidget {
 
     return SizedBox(
         height: MediaQuery.of(context).size.height * 0.6,
-        child: ListView.builder(
-            itemCount: cartItems.length,
-            itemBuilder: (BuildContext context, int index) {
-              return CartItemListTileWidget(cartItem: cartItems[index]);
-            }));
+        child: cartItems.isEmpty
+            ? const Center(
+                child: Text('カートに何もありません'),
+              )
+            : ListView.builder(
+                itemCount: cartItems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return CartItemListTileWidget(cartItem: cartItems[index]);
+                }));
   }
 }
