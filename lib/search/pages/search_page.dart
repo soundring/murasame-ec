@@ -6,11 +6,13 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        SearchBoxWidget(),
-        SearchListWidget(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: const [
+          SearchBoxWidget(),
+          SearchListWidget(),
+        ],
+      ),
     );
   }
 }
