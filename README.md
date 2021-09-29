@@ -1,16 +1,15 @@
 # murasame_ec
 
-ec app
+サーバーとの通信なしでFlutterのみで完結する家具のECアプリのサンプル
+ローカルのJSONファイルからデータを取得しています
 
-## Getting Started
+## 状態管理
+- Riverpod
+- Flutter Hooks
+- freezed
 
-This project is a starting point for a Flutter application.
+## 動作している様子の動画
+https://twitter.com/murasame_rize/status/1439446873773805571?s=20
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## AR機能を含めてみた様子の動画(GitHubにはあげてません)
+https://twitter.com/murasame_rize/status/1439812429135843328?s=20
